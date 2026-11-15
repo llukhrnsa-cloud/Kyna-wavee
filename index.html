@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Banner Pemberitahuan Tugas Sekolah di Paling Atas -->
+    <div style="background-color: #f7e864; color: #333; text-align: center; padding: 10px; font-weight: bold; font-size: 13px; letter-spacing: 0.5px;">
+     WEBSITE INI DIBUAT KHUSUS UNTUK KEPERLUAN TUGAS SEKOLAH. BUKAN MERUPAKAN WEBSITE TOKO ONLINE SEBENARNYA. ♡
+    </div>
+    <title>Kyna Wave - F1 Merchandise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Sacramento&family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #e0f7fa;
+            --pink-soft: #fde8ed;
+            --pink-accent: #f8a5c2;
+            --yellow-soft: #fff9db;
+            --yellow-accent: #ffe066;
+            --text-dark: #2d3436;
+            --text-muted: #636e72;
+            --border-light: #ffffff;
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+         margin: 0;
+         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         background-color: var(--bg-body);
+         color: var(--text-dark);
+         background-image:
+            radial-gradient(#ee98d4 5px, transparent 5px),
+            radial-gradient(#ee98d4 5px, transparent 5px);
+         background-size: 50px 50px;
+         background-position: 0 0, 25px 25px;
+         min-height: 100vh;
+        animation: gerakPolkadot 25s linear infinite;
+        }
+
+        /* HEADER & HERO BACKGROUND ATAS */
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            background: linear-gradient(135deg, rgba(253, 232, 237, 0.9) 0%, rgba(224, 247, 250, 0.9) 100%);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "🏁";
+            position: absolute;
+            left: 5%;
+            top: 20%;
+            font-size: 40px;
+            opacity: 0.2;
+            transform: rotate(-15deg);
+        }
+
+        header::after {
+            content: "🏎️";
+            position: absolute;
+            right: 5%;
+            bottom: 20%;
+            font-size: 40px;
+            opacity: 0.2;
+            transform: rotate(15deg);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Great Vibes', cursive;
+            font-size: 65px;
+            letter-spacing: 2px;
+            color: var(--text-dark);
+            font-weight: 800;
+            text-shadow: 2px 2px 8px #fff;
+        }
+
+        header p {
+            margin: 8px 0 14px;
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* LINK JADWAL RESMI F1 */
+        .official-schedule-btn {
+            display: inline-block;
+            background: #ffffff;
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            border: 1px solid var(--pink-accent);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .official-schedule-btn:hover {
+            transform: translateY(-2px);
+            background-color: var(--pink-soft);
+        }
+
+        /* NAVIGASI */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 25px 0 35px;
+            padding: 0 10px;
+            position: sticky;
+            top: 15px;
+            z-index: 100;
+        }
+
+        nav button {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        nav button:hover, nav button.active-nav {
+            background-color: var(--pink-soft);
+            transform: translateY(-2px);
+            border-color: var(--pink-accent);
+        }
+
+        /* CONTAINER MAIN */
+        main {
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* HOME LAYOUT WITH COLLAGE */
+        .home-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .home-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+        }
+
+        .home-text h2 {
+            font-size: 32px;
+            margin-top: 0;
+            color: var(--text-dark);
+        }
+
+        .home-text p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            margin-top: 15px;
+            background: var(--pink-accent);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 20px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(248, 165, 194, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .btn-cta:hover {
+            background: #f78fb3;
+            transform: scale(1.03);
+        }
+
+        /* KOLASE FOTO RINGAN */
+        .collage-wrapper {
+            position: relative;
+            height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .collage-card {
+            position: absolute;
+            width: 170px;
+            height: 220px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.25s ease;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .collage-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .collage-card .caption {
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 10px;
+            color: var(--text-dark);
+        }
+
+        .card-1 { transform: rotate(-10deg) translate(-50px, -15px); z-index: 1; }
+        .card-2 { transform: rotate(5deg) translate(0px, 10px); z-index: 2; }
+        .card-3 { transform: rotate(-4deg) translate(60px, -25px); z-index: 1; }
+        .card-4 { transform: rotate(12deg) translate(35px, 50px); z-index: 3; }
+
+        .collage-card:hover {
+            z-index: 20 !important;
+            transform: scale(1.1) rotate(0deg) !important;
+            border: 2px solid var(--pink-accent);
+        }
+
+        /* SHOP CONTROLS */
+        .shop-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 350px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px 18px 10px 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-light);
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            font-size: 13px;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: var(--pink-accent);
+        }
+
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            color: var(--text-muted);
+            padding: 8px 18px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: background-color 0.2s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--pink-soft);
+            color: var(--text-dark);
+            border-color: var(--pink-accent);
+        }
+
+        /* GRID PRODUK */
+        .grid-produk {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 14px;
+            text-align: left;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        /* WISHLIST HATI */
+        .btn-wishlist {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            z-index: 5;
+        }
+
+        .card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 12px;
+            background-color: #f7f7f7;
+            margin-bottom: 8px;
+        }
+
+        .card .tag {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-top: 4px;
+            display: inline-block;
+            background: var(--yellow-soft);
+            padding: 3px 8px;
+            border-radius: 6px;
+        }
+
+        .card h3 {
+            font-size: 15px;
+            margin: 8px 0 4px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .card .harga {
+            font-size: 14px;
+            font-weight: 700;
+            color: #d63031;
+            margin-bottom: 12px;
+        }
+
+        .btn-beli {
+            width: 100%;
+            background-color: var(--pink-soft);
+            color: var(--text-dark);
+            border: 1px solid var(--pink-accent);
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-beli:hover {
+            background-color: var(--yellow-soft);
+            border-color: var(--yellow-accent);
+        }
+
+        /* BOX INFO */
+        .box-info {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* INPUT BIODATA */
+        .form-biodata {
+            margin-top: 20px;
+            border-top: 2px solid #f0f0f0;
+            padding-top: 15px;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-size: 13px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--pink-accent);
+        }
+
+        #cart-count {
+            background: var(--pink-accent);
+            color: white;
+            padding: 2px 7px;
+            border-radius: 10px;
+            font-size: 11px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .btn-hapus {
+            background: #ff7675;
+            color: white;
+            border: none;
+            padding: 4px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        /* NOTIFIKASI TOAST MELAYANG */
+        #toast-notification {
+            visibility: hidden;
+            min-width: 280px;
+            background-color: #ffffff;
+            color: var(--text-dark);
+            border-left: 5px solid var(--pink-accent);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            border-radius: 12px;
+            padding: 14px 20px;
+            position: fixed;
+            z-index: 1000;
+            right: 20px;
+            bottom: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        #toast-notification.show {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px;
+            font-size: 13px;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.6);
+            background: rgba(255,255,255,0.4);
+        }
+        @keyframes gerakPolkadot {
+         from {
+            background-position: 0 0, 25px 25px;
+        }
+         to {
+            background-position: 500px 500px, 525px 525px;
+        }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NOTIFIKASI TOAST -->
+    <div id="toast-notification">
+        <span style="font-size: 18px;">🛒</span>
+        <span id="toast-message">Produk masuk keranjang!</span>
+    </div>
+
+    <!-- HEADER & HERO BANNER -->
+    <header style="position: relative; overflow: hidden; text-align: center; padding: 50px 20px 35px;">
+        <img src="image/download.jpg" alt="Header Background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.65);">
+
+        <div style="position: relative; z-index: 2; color: white;">
+            <h1 style="color: white;">Finish Line Finds</h1>
+            <h3 style="color: white;">Kyna Wave</h3>
+            <p style="color: white;">Formula One Merchandise</p>
+            <a href="https://www.formula1.com/en/racing/2026.html" target="_blank" rel="noopener noreferrer" class="official-schedule-btn">
+                🗓️ F1 Official Schedule ↗️
+            </a>
+        </div>
+    </header>
+
+    <!-- NAVIGASI -->
+    <nav>
+        <button id="nav-home" class="active-nav" onclick="pindah('home')">Home</button>
+        <button id="nav-profil" onclick="pindah('profil')">Profil</button>
+        <button id="nav-produk" onclick="pindah('produk')">Produk</button>
+        <button id="nav-kontak" onclick="pindah('kontak')">Kontak</button>
+        <button id="nav-cabang" onclick="pindah('cabang')">Cabang</button>
+        <button id="nav-keranjang" onclick="pindah('keranjang')">Keranjang (<span id="cart-count">0</span>)</button>
+    </nav>
+
+    <main>
+        <!-- HOME PAGE -->
+        <div id="home" class="page active">
+            <div class="home-container">
+                <div class="home-text">
+                    <h2>Selamat Datang 🏎️✨</h2>
+                    <p>Your Favorite F1 Merch, All in One Place!🏎️✨ Temukan berbagai merchandise F1 yang lucu dan unik untuk melengkapi koleksi kamu. Mulai dari pin, sticker, bracelet, sampai keychain dengan tema tim favoritmu!</p>
+                    <button class="btn-cta" onclick="pindah('produk')">Shop Now</button>
+                </div>
+
+                <!-- KOLASE FOTO INTERAKTIF BERGERAK -->
+                <div class="collage-wrapper">
+                    <div class="collage-card card-1" onclick="pindah('produk')">
+                        <img src="image/lovef1.jpg" alt="I love f1">
+                        <div class="caption">I Love F1</div>
+                    </div>
+                    <div class="collage-card card-2" onclick="pindah('produk')">
+                        <img src="image/f1ban.jpg" alt="F1 Racing">
+                        <div class="caption">Race Day</div>
+                    </div>
+                    <div class="collage-card card-3" onclick="pindah('produk')">
+                        <img src="image/f1key.jpg" alt="Acrylic Keychain">
+                        <div class="caption">Merchandise</div>
+                    </div>
+                    <div class="collage-card card-4" onclick="pindah('produk')">
+                        <img src="image/f1p.jpg" alt="Pin Button">
+                        <div class="caption">Formula 1</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROFIL PAGE -->
+        <div id="profil" class="page">
+            <div class="box-info">
+                <h2>Tentang Kami</h2>
+                <div style="color: var(--text-muted); line-height: 1.7;">
+                    <h3 style="color: var(--text-dark); margin-bottom: 5px;">A Little Shop for Every F1 Lover!</h3>
+                    <p>Kyna Wave adalah marketplace yang menyediakan berbagai merchandise bertema Formula 1 untuk para penggemar balapan. <br><br> Kami menghadirkan produk-produk menarik dengan desain yang unik dan menggemaskan, cocok untuk dikoleksi maupun dijadikan hadiah. Di Kyna Wave, kamu bisa menemukan berbagai merchandise dari tim favorit seperti Ferrari, McLaren, Mercedes, dan Red Bull.<br><br> Kami ingin membuat para penggemar F1 bisa mengekspresikan kecintaan mereka terhadap dunia balap melalui merchandise yang stylish dan menyenangkan.<br><br>
+                    Yuk, pilih tim favoritmu dan beli produknya sekarang sebelum kehabisan! <strong>Race day is shopping day! Let's gooo!</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUK PAGE -->
+        <div id="produk" class="page">
+            <div class="shop-controls">
+                <div style="display: flex; gap: 8px; align-items: center; width: 100%; max-width: 380px;">
+                    <div class="search-box" style="flex: 1;">
+                        <input type="text" id="search-input" placeholder="Cari merchandise atau pembalap..." onkeyup="searchProduct()">
+                    </div>
+                    <button id="btn-fav-filter" onclick="filterFavorite(this)" title="Lihat Favorit" style="background: #fff; border: 1px solid var(--border-light); padding: 9px 13px; border-radius: 50%; cursor: pointer; font-size: 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); transition: transform 0.2s;">
+                        ❤️
+                    </button>
+                </div>
+
+                <!-- FILTER KATEGORI -->
+                <div class="filter-container">
+                    <button class="filter-btn active" onclick="filter('all', this)">Semua</button>
+                    <button class="filter-btn" onclick="filter('McLaren', this)">McLaren</button>
+                    <button class="filter-btn" onclick="filter('Ferrari', this)">Ferrari</button>
+                    <button class="filter-btn" onclick="filter('Mercedes', this)">Mercedes</button>
+                    <button class="filter-btn" onclick="filter('Red Bull', this)">Red Bull</button>
+                </div>
+            </div>
+
+            <div class="grid-produk" id="product-grid">
+                <!-- MCLAREN -->
+                <div class="card" data-team="McLaren" data-name="pin button mclaren">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/pinmcl.jpeg" alt="Pin Button McLaren">
+                    <div>
+                        <span class="tag">McLaren</span>
+                        <h3>Pin Button</h3>
+                        <div class="harga">Rp 15.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('McLaren Pin', 15000)">+ Keranjang</button>
+                </div>
+                <div class="card" data-team="McLaren" data-name="sticker pack mclaren">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/smcl.jpeg" alt="Sticker McLaren">
+                    <div>
+                        <span class="tag">McLaren</span>
+                        <h3>Sticker Pack</h3>
+                        <div class="harga">Rp 12.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('McLaren Sticker', 12000)">+ Keranjang</button>
+                </div>
+                <div class="card" data-team="McLaren" data-name="lando norris bracelet mclaren">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/gln.jpeg" alt="Lando Norris Bracelet">
+                    <div>
+                        <span class="tag">McLaren</span>
+                        <h3>Lando Norris Bracelet</h3>
+                        <div class="harga">Rp 25.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Lando Bracelet', 25000)">+ Keranjang</button>
+                </div>
+                <div class="card" data-team="McLaren" data-name="oscar piastri bracelet mclaren">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/gop.jpeg" alt="Oscar Piastri Bracelet">
+                    <div>
+                        <span class="tag">McLaren</span>
+                        <h3>Oscar Piastri Bracelet</h3>
+                        <div class="harga">Rp 25.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Piastri Bracelet', 25000)">+ Keranjang</button>
+                </div>
+                <div class="card" data-team="McLaren" data-name="acrylic keychain mclaren">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/ln.jpeg" alt="Keychain McLaren">
+                    <div>
+                        <span class="tag">McLaren</span>
+                        <h3>Acrylic Keychain</h3>
+                        <div class="harga">Rp 45.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('McLaren Keychain', 45000)">+ Keranjang</button>
+                </div>
+
+                <!-- FERRARI -->
+                <div class="card" data-team="Ferrari" data-name="pin button ferrari">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/pinf.jpeg" alt="Ferrari Pin">
+                    <div>
+                        <span class="tag">Ferrari</span>
+                        <h3>Pin Button</h3>
+                        <div class="harga">Rp 15.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Ferrari Pin', 15000)">+ Keranjang</button>
+                </div>
+                <div class="card" data-team="Ferrari" data-name="sticker pack ferrari">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/sff.jpeg" alt="Ferrari Sticker">
+                    <div>
+                        <span class="tag">Ferrari</span>
+                        <h3>Sticker Pack</h3>
+                        <div class="harga">Rp 12.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Ferrari Sticker', 12000)">+ Keranjang</button>
+                </div>
+                <div class="card" data-team="Ferrari" data-name="charles leclerc bracelet ferrari">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/gcl.jpeg" alt="Charles Leclerc Bracelet">
+                    <div>
+                        <span class="tag">Ferrari</span>
+                        <h3>Charles Leclerc Bracelet</h3>
+                        <div class="harga">Rp 25.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Leclerc Bracelet', 25000)">+ Keranjang</button>
+                </div>
+                <div class="card" data-team="Ferrari" data-name="lewis hamilton bracelet ferrari">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/glh.jpeg" alt="Lewis Hamilton Bracelet">
+                    <div>
+                        <span class="tag">Ferrari</span>
+                        <h3>Lewis Hamilton Bracelet</h3>
+                        <div class="harga">Rp 25.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Hamilton Bracelet', 25000)">+ Keranjang</button>
+                </div>
+                <div class="card" data-team="Ferrari" data-name="acrylic keychain ferrari">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/lh.jpeg" alt="Keychain Ferrari">
+                    <div>
+                        <span class="tag">Ferrari</span>
+                        <h3>Acrylic Keychain</h3>
+                        <div class="harga">Rp 45.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Ferrari Keychain', 45000)">+ Keranjang</button>
+                </div>
+
+                <!-- MERCEDES -->
+                <div class="card" data-team="Mercedes" data-name="pin button mercedes">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/pinm.jpeg" alt="Pin Button Mercedes">
+                    <div>
+                        <span class="tag">Mercedes</span>
+                        <h3>Pin Button</h3>
+                        <div class="harga">Rp 15.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Mercedes Pin', 15000)">+ Keranjang</button>
+                </div>
+                <div class="card" data-team="Mercedes" data-name="sticker pack mercedes">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/sm.jpeg" alt="Sticker Mercedes">
+                    <div>
+                        <span class="tag">Mercedes</span>
+                        <h3>Sticker Pack</h3>
+                        <div class="harga">Rp 12.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Mercedes Sticker', 12000)">+ Keranjang</button>
+                </div>
+                <div class="card" data-team="Mercedes" data-name="george russell bracelet mercedes">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/ggr.jpeg" alt="George Russell Bracelet">
+                    <div>
+                        <span class="tag">Mercedes</span>
+                        <h3>George Russell Bracelet</h3>
+                        <div class="harga">Rp 25.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Russell Bracelet', 25000)">+ Keranjang</button>
+                </div>
+                <div class="card" data-team="Mercedes" data-name="kimi antonelli bracelet mercedes">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/gka.jpeg" alt="Kimi Antonelli Bracelet">
+                    <div>
+                        <span class="tag">Mercedes</span>
+                        <h3>Kimi Antonelli Bracelet</h3>
+                        <div class="harga">Rp 25.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Antonelli Bracelet', 25000)">+ Keranjang</button>
+                </div>
+                <div class="card" data-team="Mercedes" data-name="acrylic keychain mercedes">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/ka.jpeg" alt="Keychain Mercedes">
+                    <div>
+                        <span class="tag">Mercedes</span>
+                        <h3>Acrylic Keychain</h3>
+                        <div class="harga">Rp 45.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Mercedes Keychain', 45000)">+ Keranjang</button>
+                </div>
+
+                <!-- RED BULL -->
+                <div class="card" data-team="Red Bull" data-name="pin button red bull">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/pinr.jpeg" alt="Pin Button Red Bull">
+                    <div>
+                        <span class="tag">Red Bull</span>
+                        <h3>Pin Button</h3>
+                        <div class="harga">Rp 15.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Red Bull Pin', 15000)">+ Keranjang</button>
+                </div>
+                <div class="card" data-team="Red Bull" data-name="sticker pack red bull">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/srb.jpeg" alt="Sticker Red Bull">
+                    <div>
+                        <span class="tag">Red Bull</span>
+                        <h3>Sticker Pack</h3>
+                        <div class="harga">Rp 12.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Red Bull Sticker', 12000)">+ Keranjang</button>
+                </div>
+                <div class="card" data-team="Red Bull" data-name="max verstappen bracelet red bull">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/gmv.jpeg" alt="Max Verstappen Bracelet">
+                    <div>
+                        <span class="tag">Red Bull</span>
+                        <h3>Max Verstappen Bracelet</h3>
+                        <div class="harga">Rp 25.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Max Bracelet', 25000)">+ Keranjang</button>
+                </div>
+                <div class="card" data-team="Red Bull" data-name="acrylic keychain red bull">
+                    <button class="btn-wishlist" onclick="toggleWishlist(this)">🤍</button>
+                    <img src="image/mv.jpeg" alt="Keychain Red Bull">
+                    <div>
+                        <span class="tag">Red Bull</span>
+                        <h3>Acrylic Keychain</h3>
+                        <div class="harga">Rp 45.000</div>
+                    </div>
+                    <button class="btn-beli" onclick="addCart('Red Bull Keychain', 45000)">+ Keranjang</button>
+                </div>
+            </div>
+            <div style="background-color: #f9f9f9; border: 1px solid #ddd; padding: 15px; margin-top: 30px; border-radius: 6px; font-size: 13px; color: #555;">
+    <p style="margin-top: 0;"><strong>Referensi Sumber Gambar Produk:</strong></p>
+    <ul style="margin-bottom: 0; padding-left: 20px;">
+        <li>Keychain: <a href="https://vt.tokopedia.com/t/ZS9fs5FSq4YKV-cNPLy/" target="_blank">Tokopedia - Keychain</a></li>
+        <li>Pin: <a href="https://vt.tokopedia.com/t/ZS9fs5V5s6vau-gqsaW/" target="_blank">Tokopedia - Pin</a></li>
+        <li>Bracelet: <a href="https://vt.tokopedia.com/t/ZS9fs5t7WJoNY-O8ADO/" target="_blank">Tokopedia - Bracelet</a></li>
+        <li>Sticker: <a href="https://vt.tokopedia.com/t/ZS9fsuBL91UE4-zb1P7/" target="_blank">Tokopedia - Sticker</a></li>
+    </ul>
+</div>
+        </div>
+
+        <!-- KONTAK PAGE -->
+        <div id="kontak" class="page">
+            <div class="box-info text-center">
+                <h2>Kontak Kami</h2>
+                <p>Hubungi kami di sini!</p>
+                <p><strong>Instagram:</strong> @kynawave.f1</p>
+                <p><strong>WhatsApp:</strong> +62 812-3456-7890</p>
+            </div>
+        </div>
+
+        <!-- CABANG PAGE -->
+        <div id="cabang" class="page">
+            <div class="box-info text-center">
+                <h2>Lokasi Cabang</h2>
+                <p>Kunjungi pop-up store kami :</p>
+                <p>🏁 <strong>Bandung</strong> - Jl. Silverstone No. 1</p>
+                <p>🏁 <strong>Jakarta</strong> - Cataluya Park City No. 87</p>
+            </div>
+        </div>
+
+        <!-- KERANJANG PAGE -->
+        <div id="keranjang" class="page">
+            <div class="box-info">
+                <h2>Keranjang Belanja</h2>
+                <div id="cart-items-container">
+                    <p style="color: var(--text-muted); text-align: center; margin: 20px 0;">Keranjang kamu masih kosong.</p>
+                </div>
+                <div style="margin-top: 20px; border-top: 2px solid #eee; padding-top: 15px; display: flex; justify-content: space-between; font-weight: bold;">
+                    <span>Total:</span>
+                    <span id="cart-total">Rp 0</span>
+                </div>
+
+                <!-- FORM BIODATA CHECKOUT -->
+                <div class="form-biodata">
+                    <h3 style="font-size: 15px; margin-bottom: 12px; color: var(--text-dark);">Data Pemesan</h3>
+                    <div class="form-group">
+                        <label for="buyer-name">Nama Lengkap</label>
+                        <input type="text" id="buyer-name" placeholder="Masukkan nama kamu...">
+                    </div>
+                    <div class="form-group">
+                        <label for="buyer-phone">Nomor WhatsApp</label>
+                        <input type="text" id="buyer-phone" placeholder="Contoh: 081234567890">
+                    </div>
+                    <div class="form-group">
+                        <label for="buyer-address">Alamat Pengiriman</label>
+                        <textarea id="buyer-address" rows="3" placeholder="Masukkan alamat lengkap pengiriman..."></textarea>
+                    </div>
+                </div>
+
+                <button class="btn-cta" style="width: 100%; margin-top: 15px;" onclick="checkout()">Kirim Pesanan</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Kyna Wave - Finish Line Finds. All Rights Reserved.</p>
+    </footer>
+
+    <!-- SCRIPT INTERAKTIF -->
+    <script>
+        let cart = [];
+        let showingFavOnly = false;
+
+        function pindah(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+
+            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active-nav'));
+            let activeBtn = document.getElementById('nav-' + pageId);
+            if (activeBtn) activeBtn.classList.add('active-nav');
+            window.scrollTo(0, 0);
+        }
+
+        function filter(team, btn) {
+            showingFavOnly = false;
+            let favBtn = document.getElementById('btn-fav-filter');
+            if (favBtn) {
+                favBtn.style.transform = "scale(1)";
+                favBtn.style.backgroundColor = "#ffffff";
+                favBtn.style.borderColor = "var(--border-light)";
+            }
+
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            document.querySelectorAll('.card').forEach(card => {
+                if (team === 'all' || card.getAttribute('data-team') === team) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function searchProduct() {
+            let keyword = document.getElementById('search-input').value.toLowerCase();
+            document.querySelectorAll('.card').forEach(card => {
+                let name = card.getAttribute('data-name');
+                let team = card.getAttribute('data-team').toLowerCase();
+                if (name.includes(keyword) || team.includes(keyword)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function toggleWishlist(btn) {
+            if (btn.innerText === '🤍') {
+                btn.innerText = '❤️';
+                showToast('Ditambahkan ke produk favorit ❤️');
+            } else {
+                btn.innerText = '🤍';
+                showToast('Dihapus dari produk favorit');
+            }
+        }
+
+        function filterFavorite(btn) {
+            showingFavOnly = !showingFavOnly;
+            let filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(b => b.classList.remove('active'));
+
+            let cards = document.querySelectorAll('.card');
+            let countFav = 0;
+
+            cards.forEach(card => {
+                let wishBtn = card.querySelector('.btn-wishlist');
+                if (showingFavOnly) {
+                    btn.style.transform = "scale(1.15)";
+                    btn.style.backgroundColor = "#ffe6e6";
+                    btn.style.borderColor = "#ff4d4d";
+
+                    if (wishBtn && wishBtn.innerText.trim() === '❤️') {
+                        card.style.display = 'flex';
+                        countFav++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                } else {
+                    btn.style.transform = "scale(1)";
+                    btn.style.backgroundColor = "#ffffff";
+                    btn.style.borderColor = "var(--border-light)";
+                    card.style.display = 'flex';
+                }
+            });
+
+            if (showingFavOnly) {
+                if (countFav === 0) {
+                    showToast('Belum ada produk favorit yang ditandai ❤️');
+                } else {
+                    showToast('Menampilkan ' + countFav + ' produk favoritmu ✨');
+                }
+            } else {
+                if (filterBtns.length > 0) filterBtns[0].classList.add('active');
+                showToast('Menampilkan semua produk');
+            }
+        }
+
+        function addCart(nama, harga) {
+            let item = cart.find(i => i.nama === nama);
+            if (item) {
+                item.qty++;
+            } else {
+                cart.push({ nama, harga, qty: 1 });
+            }
+            updateCartUI();
+            showToast(nama + ' berhasil masuk keranjang! 🛒');
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            document.getElementById('cart-count').innerText = cart.reduce((a, b) => a + b.qty, 0);
+
+            let container = document.getElementById('cart-items-container');
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p style="color: var(--text-muted); text-align: center; margin: 20px 0;">Keranjang kamu masih kosong.</p>';
+            } else {
+                container.innerHTML = '';
+                cart.forEach((item, index) => {
+                    totalPrice += item.harga * item.qty;
+                    container.innerHTML += `
+                        <div class="cart-item">
+                            <div>
+                                <strong>${item.nama}</strong><br>
+                                <small style="color: var(--text-muted);">Rp ${item.harga.toLocaleString()} x ${item.qty}</small>
+                            </div>
+                            <button class="btn-hapus" onclick="removeFromCart(${index})">Hapus</button>
+                        </div>
+                    `;
+                });
+            }
+            document.getElementById('cart-total').innerText = 'Rp ' + totalPrice.toLocaleString();
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                showToast('Keranjang kamu masih kosong!');
+                return;
+            }
+
+            let name = document.getElementById('buyer-name').value.trim();
+            let phone = document.getElementById('buyer-phone').value.trim();
+            let address = document.getElementById('buyer-address').value.trim();
+
+            if (!name || !phone || !address) {
+                showToast('Silakan lengkapi biodata kamu terlebih dahulu! ✨');
+                return;
+            }
+
+            // Notifikasi pesanan berhasil dan kosongkan keranjang
+            showToast('Terima kasih, ' + name + '! Pesanan kamu berhasil dikirim ✨');
+
+            cart = [];
+            document.getElementById('buyer-name').value = '';
+            document.getElementById('buyer-phone').value = '';
+            document.getElementById('buyer-address').value = '';
+            updateCartUI();
+        }
+
+        function showToast(message) {
+            let toast = document.getElementById('toast-notification');
+            document.getElementById('toast-message').innerText = message;
+            toast.className = 'show';
+            setTimeout(() => {
+                toast.className = toast.className.replace('show', '');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
